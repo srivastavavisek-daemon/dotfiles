@@ -1,0 +1,48 @@
+.cm-table-widget {
+    margin: 1.5em 0;  /* Space above and below table */
+}
+
+.cm-table-widget .table-wrapper {
+    border-radius: 10px;  /* Rounded corners */
+    overflow: hidden;
+}
+
+thead {
+    background: var(--background-primary-alt);
+    border-bottom: 2px solid var(--background-modifier-border);
+}
+
+thead th {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.table-cell-wrapper {
+    padding: 0.75em 1.2em !important;  /* Slightly more comfortable */
+}
+
+th .table-cell-wrapper {
+    font-weight: 600;  /* Semi-bold */
+}
+
+/* ROW HOVER EFFECT */
+tbody tr {
+    transition: background-color 0.2s ease;  /* Smooth color change */
+}
+
+tbody tr:hover {
+    background-color: var(--background-primary-alt) !important;
+    cursor: pointer;  /* Shows it's interactive */
+}
+
+/* ALTERNATING ROW COLORS */
+tbody tr:nth-child(even) {
+    background-color: var(--background-secondary);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--background-primary);
+}
