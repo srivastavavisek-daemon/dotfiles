@@ -1,4 +1,3 @@
-
 alias x=' startx'
 
 alias v='$EDITOR'
@@ -21,6 +20,9 @@ alias bat='bat --paging=never --style=grid,numbers,changes --color=always'
 # : trash-empty 30  # delete files trashed more than 30 days ago
 # .local/share/Trash
 alias rmd='trash-put --verbose'
+alias rm='rm -i'
+
+alias mv='mv -i'
 
 # Repos
 alias repo=' cd $REPOS'
@@ -35,7 +37,7 @@ alias szrc=' source ~/.zshrc'
 alias vi3=' v ~/.config/i3/config'
 
 # ls
-alias ls='ls --color=always'  # keep it sane: avoids insanity when piping
+alias ls='ls -h --color=always'  # keep it sane: avoids insanity when piping
 alias l='eza -l --git --icons --color=always'
 alias la='eza -a --git --icons'
 alias ld='eza -D --icons'
@@ -83,16 +85,17 @@ alias glog='git log --oneline --graph --decorate'
 alias gloga=' git log --oneline --graph --all'
 alias gc='git commit -v'
 alias gca='git commit -a'
-alias g='git'
 alias gs='git status -s'
+alias gd='git diff'
+alias lg='lazygit'
+
+alias g='git'
 alias ga='git add'
 alias gcm='git commit -m'
 alias gp='git push'
 alias gpl='git pull'
-alias gd='git diff'
 alias gco='git checkout'
 alias gcb='git checkout -b'
-alias lg='lazygit'
 
 # Kubernetes
 
