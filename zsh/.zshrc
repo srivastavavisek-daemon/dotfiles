@@ -31,12 +31,13 @@ setopt hist_reduce_blanks    # Remove extra blanks from history
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 # for aliases better to focus on HIST_IGNORE_SPACE and prefix a space
+setopt EXTENDED_HISTORY
 
 setopt auto_menu  # After one tab, show completion menu
 #setopt menu_complete  # Immediately insert first match and cycle through with tab
 # menu_complete can be jarring because it auto-inserts
 
-#export HISTTIMEFORMAT="%F "
+export HISTTIMEFORMAT="%T: "
 
 
 # BINDKEYS
