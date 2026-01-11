@@ -51,7 +51,7 @@ separator=false
 [time]
 command=echo "<span foreground='#5e81ac' background='#2e3440' size='x-large'></span><span background='#5e81ac'> <span rise='1pt' size='x-large'>󰃯 </span><span rise='2pt'>$(date +'%a %d-%b %H:%M')</span> </span><span background='#5e81ac' foreground='#2e3440' size='x-large'></span>"
 markup=pango
-color=#0E1428
+color=#EEEEEE
 interval=1
 separator=false
 separator_block_width=0
