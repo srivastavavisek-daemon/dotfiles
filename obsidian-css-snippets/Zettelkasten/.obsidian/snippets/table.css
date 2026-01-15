@@ -14,7 +14,7 @@ thead {
 
 thead th {
     text-align: left;
-    text-transform: uppercase;
+    text-transform: none;
     font-size: 0.85em;
     letter-spacing: 0.05em;
     color: var(--text-muted);
