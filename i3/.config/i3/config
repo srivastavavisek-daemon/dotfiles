@@ -50,6 +50,9 @@ exec_always --no-startup-id feh --bg-fill $HOME/Gallery/_wallpapers/b-495.jpg
 #exec_always --no-startup-id $HOME/repos/scripts/wallpaper2
 bindsym $mod+Shift+i exec --no-startup-id $HOME/repos/scripts/wallpaper2
 
+# bindsym $amod+Shift+i exec --no-startup-id $HOME/repos/scripts/wallpaper next
+# bindsym $amod+Shift+o exec --no-startup-id $HOME/repos/scripts/wallpaper prev
+
 # █████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗
 # ╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝
 # [ WORKFLOW: KEY-BINDINGS AND UTILITIES ]
@@ -145,7 +148,7 @@ bindsym $mod+Shift+grave exec --no-startup-id notify-send "Sent to scratchpad"; 
 bindsym $mod+grave scratchpad show; focus
 # Repeated presses cycle through them round-robin style.
 
-# clipboard-manager 
+# clipboard-manager
 bindsym $mod+c exec --no-startup-id $HOME/repos/scripts/cliphist add
 bindsym $mod+$amod+c exec --no-startup-id $HOME/repos/scripts/cliphist menu
 
@@ -266,8 +269,11 @@ bar {
 #   separator_symbol " "
 
 #   stop switching workspaces every time my finger twitches
-#   bindsym button4 nop
-#   bindsym button5 nop
+    bindsym button1 nop
+    bindsym button2 nop
+    bindsym button3 nop
+    bindsym button4 nop
+    bindsym button5 nop
 
 #   tray_output primary
     tray_output none
@@ -322,12 +328,14 @@ mode "$resizeMode" {
 set $powerMode power
 bindsym $mod+Control+l mode "$powerMode"
 mode "$powerMode" {
-    bindsym l mode "default", exec --no-startup-id i3exit lock      
-    bindsym e mode "default", exec --no-startup-id i3exit logout    
-    bindsym s mode "default", exec --no-startup-id i3exit suspend   
-    bindsym r mode "default", exec --no-startup-id i3exit reboot    
-    bindsym p mode "default", exec --no-startup-id i3exit shutdown  
-    bindsym h mode "default", exec --no-startup-id i3exit hibernate 
+#   bindsym l mode "default", exec --no-startup-id i3lock -c 00000000
+    bindsym l mode "default", exec --no-startup-id $HOME/repos/scripts/lock2
+      
+#   bindsym e mode "default", exec --no-startup-id i3exit logout    
+#   bindsym s mode "default", exec --no-startup-id i3exit suspend   
+#   bindsym r mode "default", exec --no-startup-id i3exit reboot    
+#   bindsym p mode "default", exec --no-startup-id i3exit shutdown  
+#   bindsym h mode "default", exec --no-startup-id i3exit hibernate 
 
     bindsym $mod+l mode "default"
     bindsym Return mode "default"
@@ -390,21 +398,6 @@ mode "$gapsModeOuter" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-# ENTER META MODE
-
-bindsym $mod+z exec --no-startup-id notify-send "i3 Modes" \
-'r = Resize Mode\ng = Gaps Mode'; mode "meta"
-
-mode "meta" {
-    bindsym r mode "resize"
-    bindsym g mode "gaps"
-
-    # return to default
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
-
 
 
 # █████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗
