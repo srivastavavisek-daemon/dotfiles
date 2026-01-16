@@ -60,3 +60,9 @@ separator_block_width=0
 #command=echo "<span foreground='#81a1c1' size='large'></span> "; if [ $button ]; then rofi -show menu -modi 'menu:rofi-power-menu' >/dev/null; fi
 #markup=pango
 #interval=1
+
+[arch]
+command=/home/srivastava/repos/scripts/arch-logo
+interval=once
+color=#1793d1
+markup=pango

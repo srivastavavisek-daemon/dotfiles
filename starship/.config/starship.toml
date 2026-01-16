@@ -2,7 +2,7 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-scan_timeout = 100
+scan_timeout = 200
 #add_newline = false
 
 #format = '''
@@ -10,8 +10,12 @@ scan_timeout = 100
 #[│](bold green)$directory$rust$package
 #[└─>](bold green) '''
 
+#[](fg:#6c757d)\
+#[](fg:#495057 bg:#6c757d)\
+#[](fg:#343a40 bg:#495057)\
+
 format = """
-[▓▒░](#a3aed2)\
+[](fg:#363537)\
 $directory\
 $git_branch\
 $git_status\
@@ -27,6 +31,8 @@ right_format = "$time"
 [character]
 success_symbol = '[](fg:#8fbcbb bg:#8fbcbb)[](fg:#8fbcbb)'
 error_symbol = '[](fg:#8fbcbb bg:#E84855)[](fg:#E84855)'
+#success_symbol = '[ ](fg:#8fbcbb bg:#8fbcbb)[](fg:#8fbcbb)'
+#error_symbol = '[ ](fg:#8fbcbb bg:#E84855)[](fg:#E84855)'
 
 # Disable vi mode bindings
 vimcmd_symbol = ""

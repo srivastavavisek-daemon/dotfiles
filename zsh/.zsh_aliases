@@ -1,13 +1,7 @@
 alias x=' startx'
-
 alias v='$EDITOR'
 alias vim='nvim'
 alias sv='sudoedit'
-
-alias ..=' cd .. && ll'
-alias ...=' cd ../.. && ll'
-alias c=' clear'
-alias z=' exit'
 
 # ls
 alias ls='ls -h --color=always'  # keep it sane: avoids insanity when piping
@@ -20,10 +14,28 @@ alias lt='eza --tree --level=2 --long --git --icons'
 alias ltt='eza --tree --long --git --icons'
 # eza uses nerd-fonts
 
-alias bat='bat --paging=never --style=grid,numbers,changes --color=always'
+# DIRECTORIES
+alias r=' cd $REPOS && ll'
+alias dots=' cd $DOTFILES && ll'
+alias notes=' cd $HOME/Zettelkasten'
+
+# config-files
+alias vzrc=' v ~/.zshrc'
+alias szrc=' source ~/.zshrc'
+alias vi3=' v ~/.config/i3/config'
+
+#alias sk='killall ssh-agent && source ~/.zshrc'
+
+alias ..=' cd .. && ll'
+alias ...=' cd ../.. && ll'
+alias c=' clear'
+alias z=' exit'
+
 #alias cm='cmake ..'
 #alias mk='make -j$(nproc)'
 #alias ut='tar xf'
+
+alias bat='bat --paging=never --style=grid,numbers,changes --color=always'
 
 # : trash-list
 # : trash-restore
@@ -35,34 +47,22 @@ alias rm='rm -i'
 
 alias mv='mv -i'
 
-# Repos
-alias repo=' cd $REPOS && ll'
-alias dots=' cd $DOTFILES && ll'
-alias notes=' cd $HOME/Zettelkasten'
+# scripts
+alias Rd='eval "$($SCRIPTS/1-cd)"'
+alias Rs='eval "$($SCRIPTS/exec-script)"'
 
-# config-files
-alias vzrc=' v ~/.zshrc'
-alias szrc=' source ~/.zshrc'
-#alias sk='killall ssh-agent && source ~/.zshrc'
-
-alias vi3=' v ~/.config/i3/config'
-
-# python
-alias py='python3'
-alias pip='pip3'
-alias actpy=' source ~/.venv/bin/activate'
-alias deact=' deactivate'
-
-# grep
-alias grep='grep --color=auto' 
-alias egrep='egrep --color=auto'
-
-# arch
+# █████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗
+# ╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝
+# pacman
 alias sget='sudo pacman -S --color auto' 
 alias pacman='pacman --color auto'
 alias syyu=' sudo pacman -Syyu --color auto'
 alias syu=' sudo pacman -Syu --color auto'
 #alias y=' yay --devel --save'
+
+# grep
+alias grep='grep --color=auto' 
+alias egrep='egrep --color=auto'
 
 # tmux
 #alias t=' tmux'
@@ -73,7 +73,7 @@ alias syu=' sudo pacman -Syu --color auto'
 #alias tks='tmux kill-session -t' 
 
 # fzf
-alias fp=' fzf --preview "bat --style=numbers --color=always --line-range :500 {}" --border --height 70% --bind "ctrl-j:preview-half-page-down,ctrl-k:preview-half-page-up"'
+alias Rf=' fzf --preview "bat --style=numbers --color=always --line-range :500 {}" --border --height 70% --bind "ctrl-j:preview-half-page-down,ctrl-k:preview-half-page-up"'
 vf() {
     local file
     file=$(fp) || return 1  # Exit if user cancels
@@ -81,21 +81,25 @@ vf() {
 }
 
 # git
-alias glog='git log --oneline --graph --decorate'
-alias gloga=' git log --oneline --graph --all'
-alias gc='git commit -v'
-alias gca='git commit -a'
-alias gs='git status -s'
-alias gd='git diff'
-alias lg='lazygit'
-
+#alias glog='git log --oneline --graph --decorate'
+#alias gloga=' git log --oneline --graph --all'
+#alias gc='git commit -v'
+#alias gca='git commit -a'
+#alias gs='git status -s'
+#alias gd='git diff'
+#alias lg='lazygit'
 alias g='git'
 alias ga='git add'
 alias gcm='git commit -m'
 alias gp='git push'
-alias gpl='git pull'
 alias gco='git checkout'
 alias gcb='git checkout -b'
+
+# python
+alias py='python3'
+alias pip='pip3'
+alias actpy=' source ~/.venv/bin/activate'
+alias deact=' deactivate'
 
 # Kubernetes
 
@@ -104,9 +108,3 @@ alias gcb='git checkout -b'
 # Bluetooth
 #alias btear='bluetoothctl connect 00:00:00:00:00:00'
 
-# find files recursively
-# nova() {}
-# what is the fzf script doing above
-
-# scrits
-alias fcd='eval "$($SCRIPTS/1-cd)"'

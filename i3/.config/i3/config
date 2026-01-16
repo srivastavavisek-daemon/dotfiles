@@ -1,9 +1,9 @@
-# ██╗██████╗░  ░█████╗░░█████╗░███╗░░██╗███████╗██╗░██████╗░
-# ╚═╝╚════██╗  ██╔══██╗██╔══██╗████╗░██║██╔════╝██║██╔════╝░
-# ██║░█████╔╝  ██║░░╚═╝██║░░██║██╔██╗██║█████╗░░██║██║░░██╗░
-# ██║░╚═══██╗  ██║░░██╗██║░░██║██║╚████║██╔══╝░░██║██║░░╚██╗
-# ██║██████╔╝  ╚█████╔╝╚█████╔╝██║░╚███║██║░░░░░██║╚██████╔╝
-# ╚═╝╚═════╝░  ░╚════╝░░╚════╝░╚═╝░░╚══╝╚═╝░░░░░╚═╝░╚═════╝░
+# ██╗██████╗░
+# ╚═╝╚════██╗
+# ██║░█████╔╝
+# ██║░╚═══██╗
+# ██║██████╔╝
+# ╚═╝╚═════╝░
 
 # srivastavavisek
 
@@ -160,7 +160,7 @@ bindsym $mod+$amod+c exec --no-startup-id $HOME/repos/scripts/cliphist menu
 # Mod+Print: screen capture (immediate)
 bindsym Print exec --no-startup-id flameshot gui 
 #bindsym $mod+Print exec --no-startup-id flameshot full 
-bindsym $mod+Print exec --no-startup-id $HOME/repos/scripts/screenshot
+bindsym $mod+Print exec --no-startup-id $HOME/repos/scripts/screenshot2
 
 # █████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗
 # ╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝
