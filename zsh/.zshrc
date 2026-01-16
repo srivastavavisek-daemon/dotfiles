@@ -24,25 +24,27 @@ unsetopt prompt_sp
 # HISTORY
 HISTFILE="$XDG_CACHE_HOME/zsh_histfile"
 #HISTFILE=~/.histfile
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=500000
+SAVEHIST=500000
 
-setopt append_history inc_append_history  
+# setopt HIST_IGNORE_ALL_DUPS  # keeps only the latest instance of any command
+setopt HIST_EXPIRE_DUPS_FIRST # Delete duplicates first when hist size is reached
+setopt HIST_IGNORE_DUPS  # ignores a command if it's the exact same as the previous one
+
+setopt SHARE_HISTORY      # Share history between sessions
+setopt INC_APPEND_HISTORY
+setopt APPEND_HISTORY
 # append_history: Adds to history file instead of overwriting
 # inc_append_historyWrites to history immediately after each command 
 
-setopt SHARE_HISTORY      # Share history between sessions
-setopt hist_reduce_blanks    # Remove extra blanks from history
-setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 # for aliases better to focus on HIST_IGNORE_SPACE and prefix a space
+
 setopt EXTENDED_HISTORY
+#export HIST_STAMPS="yyyy-mm-dd HH:MM"
+# Zsh stores time, not format. You format on display. Use history -i
 
-setopt auto_menu  # After one tab, show completion menu
-#setopt menu_complete  # Immediately insert first match and cycle through with tab
-# menu_complete can be jarring because it auto-inserts
-
-export HISTTIMEFORMAT="%T: "
+setopt HIST_REDUCE_BLANKS  # Remove extra blanks from history
 
 # █████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗
 # ╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝
@@ -53,10 +55,10 @@ export HISTTIMEFORMAT="%T: "
 
 bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
-bindkey "^w" kill-line  # Delete from cursor to end-of-line
-bindkey "^b" backward-kill-line
-#bindkey "" backward-word
-#bindkey "" forward-word
+bindkey "^d" kill-line  # Delete from cursor to end-of-line
+bindkey "^s" backward-kill-line
+bindkey "^b" backward-word
+bindkey "^w" forward-word
 bindkey "^h" backward-kill-word
 bindkey "^k" history-search-backward
 bindkey "^j" history-search-forward
@@ -74,6 +76,10 @@ autoload -U colors && colors
 zstyle ':completion:*' menu select
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' squeeze-slashes false
+
+setopt AUTO_MENU  # After one tab, show completion menu
+#setopt MENU_COMPLETE  # Immediately insert first match and cycle through with tab
+# MENU_COMPLETE can be jarring because it auto-inserts
 
 # fzf history widget
 source <(fzf --zsh)

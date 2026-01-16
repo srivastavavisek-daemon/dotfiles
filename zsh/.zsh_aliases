@@ -30,6 +30,7 @@ alias ..=' cd .. && ll'
 alias ...=' cd ../.. && ll'
 alias c=' clear'
 alias z=' exit'
+alias hist='history -i'
 
 #alias cm='cmake ..'
 #alias mk='make -j$(nproc)'
